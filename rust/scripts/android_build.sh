@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # set the version to use the library
-min_ver=22
+min_ver=30
 # verify before executing this that you have the proper targets installed
-cargo ndk --target aarch64-linux-android --android-platform ${min_ver} -- build --release
-cargo ndk --target armv7-linux-androideabi --android-platform ${min_ver} -- build --release
-cargo ndk --target i686-linux-android --android-platform ${min_ver} -- build --release
-cargo ndk --target x86_64-linux-android --android-platform ${min_ver} -- build --release
+cargo ndk --target aarch64-linux-android -p ${min_ver} -- build --release
+cargo ndk --target armv7-linux-androideabi -p ${min_ver} -- build --release
+cargo ndk --target i686-linux-android -p ${min_ver} -- build --release
+cargo ndk --target x86_64-linux-android -p ${min_ver} -- build --release
 
 # moving libraries to the android project
 jniLibs=../android/rusty-android-lib/src/main/jniLibs
